@@ -1,0 +1,18 @@
+﻿@page "/"
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-16">
+    <MudText Typo="Typo.h3" GutterBottom="true">Hello, world!</MudText>
+    <MudText Class="mb-8">Welcome to your new app, powerd by MudBlazor!</MudText>
+    <MudAlert Severity="Severity.Normal">You can find documentation and examples on our website here: <MudLink Href="https://mudblazor.com" Typo="Typo.body2" Color="Color.Inherit"><b>www.mudblazor.com</b></MudLink></MudAlert>
+
+    <EditForm Model="test">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <MudTextField @bind-Value="test.SomeString1" For="@(() => test.SomeString1)" Label="1"></MudTextField>
+        <MudTextField @bind-Value="test.SomeString2" For="@(() => test.SomeString2)" Label="2"></MudTextField>
+        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled">Submit</MudButton>
+    </EditForm>
+</MudContainer>
+
+@code{
+    Test test = new();
+}
